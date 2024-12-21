@@ -11,31 +11,24 @@ class Lock
 {
     /**
      * The globally defined permissions for the application.
-     * 
+     *
      * @var array<string,bool>
      */
     protected $permissions;
 
     /**
      * Permissions for a set model
-     * 
+     *
      * @var array<string,bool>
      */
     protected $abilities;
 
-    public function __construct()
-    {
+    public function __construct() {}
 
-    }
-
-    public function permissions($permissions)
-    {
-        
-    }
+    public function permissions($permissions) {}
 
     public function forModel(Model $model)
     {
         Gate::getPolicyFor($model);
     }
-    
 }

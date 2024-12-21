@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace Honed\Lock\Tests;
 
-use Illuminate\Support\Facades\View;
-use Orchestra\Testbench\TestCase as Orchestra;
 use Honed\Lock\LockServiceProvider;
-use Inertia\Inertia;
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
-use Inertia\ServiceProvider as InertiaServiceProvider;
 use Honed\Lock\Tests\Stubs\Status;
+use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Routing\Middleware\SubstituteBindings;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\View;
+use Inertia\Inertia;
+use Inertia\ServiceProvider as InertiaServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
@@ -51,7 +51,7 @@ class TestCase extends Orchestra
 
     protected function defineRoutes($router)
     {
-        $router->middleware([SubstituteBindings::class])->group(function () use ($router) {
+        $router->middleware([SubstituteBindings::class])->group(function () {
             // $router->get('/', fn () => 'Hello World');
         });
     }
