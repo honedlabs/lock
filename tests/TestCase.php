@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace Honed\Lock\Tests;
 
-use Honed\Lock\LockServiceProvider;
-use Honed\Lock\Tests\Stubs\ProductController;
-use Honed\Lock\Tests\Stubs\Status;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Routing\Middleware\SubstituteBindings;
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\View;
 use Inertia\Inertia;
-use Inertia\ServiceProvider as InertiaServiceProvider;
+use Honed\Lock\Tests\Stubs\Status;
+use Honed\Lock\LockServiceProvider;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Honed\Lock\Tests\Stubs\ProductController;
 use Orchestra\Testbench\TestCase as Orchestra;
+use Illuminate\Routing\Middleware\SubstituteBindings;
+use Inertia\ServiceProvider as InertiaServiceProvider;
 
 class TestCase extends Orchestra
 {
