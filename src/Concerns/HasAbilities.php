@@ -12,15 +12,13 @@ trait HasAbilities
 {
     /**
      * Define the abilities this model has.
-     * 
+     *
      * @return array<string,bool>
      */
     abstract public function abilities();
 
     /**
      * Initialize the abilities trait for an instance.
-     * 
-     * @return void
      */
     public function initializeHasAbilities(): void
     {
@@ -31,8 +29,6 @@ trait HasAbilities
 
     /**
      * Retrieve the abilities this model has.
-     * 
-     * @return \Illuminate\Database\Eloquent\Casts\Attribute
      */
     public function locks(): Attribute
     {
@@ -41,7 +37,7 @@ trait HasAbilities
 
     /**
      * Hide the abilities from the model.
-     * 
+     *
      * @return $this
      */
     public function withoutAbilities(): static
@@ -55,7 +51,7 @@ trait HasAbilities
 
     /**
      * Make available the abilities from the model.
-     * 
+     *
      * @return $this
      */
     public function withAbilities(): static
