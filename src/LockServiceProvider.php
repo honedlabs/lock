@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Honed\Lock;
 
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
 class LockServiceProvider extends ServiceProvider
@@ -13,16 +14,14 @@ class LockServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/lock.php', 'lock');
+        $this->registerMiddleware();
     }
 
     /**
-     * Bootstrap services.
+     * Register the middleware alias.
      */
-    public function boot(): void
+    protected function registerMiddleware(): void
     {
-        $this->publishes([
-            __DIR__.'/../config/lock.php' => config_path('lock.php'),
-        ], 'lock-config');
+        Route::aliasMiddleware('lock', Middleware\ShareLock::class);
     }
 }
